@@ -102,4 +102,38 @@ public class Challenge {
 
         System.out.println(finalPrice);
     }
+
+    public static void showPositivesAndMean() {
+        Scanner tempScanner = new Scanner(System.in);
+        int numberOfPositives = 0;
+        double tempNumber = 0;
+        double mean = 0;
+
+        for(int i = 0; i < 6; i++) {
+            tempNumber = tempScanner.nextFloat();
+
+            if(tempNumber > 0) {
+                mean += tempNumber;
+                numberOfPositives++;
+            }
+        }
+
+        mean /= numberOfPositives;
+
+        System.out.println(numberOfPositives + " valores positivos");
+        System.out.println(String.format("%.1f", mean));
+    }
+
+    public static void infiniteSeries() {
+        Scanner tempScanner = new Scanner(System.in);
+
+        int N = tempScanner.nextInt();
+        double H = 0;
+
+        for(double i = 1; i <= N; i++) {
+            H += (1 / i);
+        }
+
+        System.out.println(String.format("%.2f", H));
+    }
 }
