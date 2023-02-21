@@ -50,6 +50,7 @@ public class Challenge {
         }
 
         // not very smart, but it'll work
+        // (it didn't completely work actually
         int intAmount = 1, tempSum = 0, firstMember = 0;
         while(intAmount < 40) {
             for(int i = 0; i < intAmount; i++) {
@@ -82,6 +83,23 @@ public class Challenge {
     }
 
     public static void carFactory() {
+        Scanner scan = new Scanner(System.in);
 
+        int rawPrice, distributerPercentage, taxPercentage;
+        int finalPrice;
+
+        rawPrice = scan.nextInt();
+        distributerPercentage = scan.nextInt();
+        taxPercentage = scan.nextInt();
+
+        finalPrice = (
+                (rawPrice * distributerPercentage) +
+                (rawPrice * taxPercentage)
+                );
+
+        finalPrice /= 100;
+        finalPrice += rawPrice;
+
+        System.out.println(finalPrice);
     }
 }
