@@ -134,6 +134,37 @@ public class Challenge {
             H += (1 / i);
         }
 
-        System.out.println(String.format("%.2f", H));
+        System.out.println(String.format("%.0f", H));
+    }
+
+    public static void fibonacciSequence() {
+        Scanner tempScanner = new Scanner(System.in);
+
+        int firstMember = 0, secondMember = 1;
+        int N = tempScanner.nextInt();
+
+        if(N == 0) {
+            System.out.print("0");
+        }
+        
+        if(N == 1) {
+            System.out.print("0");
+        }
+        
+        if(N > 1) {
+            System.out.print("0 ");
+
+            int currentMember = 1;
+
+            for(int i = 0; i < (N - 2); i++) {
+                System.out.print(currentMember + " ");
+
+                currentMember = firstMember + secondMember;
+                firstMember = secondMember;
+                secondMember = currentMember;
+            }
+
+            System.out.print(currentMember);
+        }
     }
 }
