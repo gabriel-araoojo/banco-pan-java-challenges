@@ -167,4 +167,32 @@ public class Challenge {
             System.out.print(currentMember);
         }
     }
+
+    public static void areaOrPerimeter() {
+        Scanner tempScanner = new Scanner(System.in);
+
+        double A, B, C;
+
+        A = tempScanner.nextDouble();
+        B = tempScanner.nextDouble();
+        C = tempScanner.nextDouble();
+
+        boolean isTriangle = (
+                (A + B > C) &&
+                (B + C > A) &&
+                (C + A > B)
+                );
+
+        if(isTriangle) {
+            double trianglePerimeter = A + B + C;
+
+            System.out.println("Perimetro = " + String.format("%.1f", trianglePerimeter));
+        }
+
+        else {
+            double trapezoidArea = (A + B) * (C / 2);
+
+            System.out.println("Area = " + String.format("%.1f", trapezoidArea));
+        }
+    }
 }
