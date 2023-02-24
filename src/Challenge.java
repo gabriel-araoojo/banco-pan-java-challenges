@@ -195,4 +195,29 @@ public class Challenge {
             System.out.println("Area = " + String.format("%.1f", trapezoidArea));
         }
     }
+
+     public static void animal() {
+        HashMap<String, String> auxHashMap = new HashMap<>();
+
+        auxHashMap.put("vertebrado ave carnivoro", "aguia");
+        auxHashMap.put("vertebrado ave onivoro", "pomba");
+        auxHashMap.put("vertebrado mamifero onivoro", "homem");
+        auxHashMap.put("vertebrado mamifero herbivoro", "vaca");
+        auxHashMap.put("invertebrado inseto hematofago", "pulga");
+        auxHashMap.put("invertebrado inseto herbivoro", "lagarta");
+        auxHashMap.put("invertebrado anelideo hematofago", "sanguessuga");
+        auxHashMap.put("invertebrado anelideo onivoro", "minhoca");
+
+        Scanner tempScanner = new Scanner(System.in);
+
+        String line1, line2, line3;
+
+        line1 = tempScanner.nextLine();
+        line2 = tempScanner.nextLine();
+        line3 = tempScanner.nextLine();
+
+        String auxString = line1 + " " + line2 + " " + line3;
+
+        System.out.println(auxHashMap.get(auxString));
+     }
 }
