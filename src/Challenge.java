@@ -220,4 +220,40 @@ public class Challenge {
 
         System.out.println(auxHashMap.get(auxString));
      }
+
+     public static void traderJoes() {
+        Scanner tempScanner = new Scanner(System.in);
+
+        double apples, strawberries, applesPrice, strawberriesPrice, totalPrice;
+
+        strawberries = tempScanner.nextDouble();
+        apples = tempScanner.nextDouble();
+
+        if(strawberries > 5) {
+            strawberriesPrice = strawberries * 2.2;
+        }
+
+        else {
+            strawberriesPrice = strawberries * 2.5;
+        }
+
+        if(apples > 5) {
+            applesPrice = apples * 1.5;
+        }
+
+        else {
+            applesPrice = apples * 1.8;
+        }
+
+        totalPrice = strawberriesPrice + applesPrice;
+
+        if(
+                ((strawberries + apples) > 8) ||
+                (totalPrice > 25)
+        ) {
+            totalPrice *= 0.9;
+        }
+
+        System.out.println(totalPrice);
+     }
 }
