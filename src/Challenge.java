@@ -259,31 +259,52 @@ public class Challenge {
 
     public static void calculateTaxes() {
         Scanner leitor = new Scanner(System.in);
-    double renda = leitor.nextDouble();
-    double imposto = 0;
- 
-      //TODO: Agora utilizando estrutura condicional implemente em seu código as condições necessárias para o cálculo da taxa de imposto de renda:
-    if(renda <= 2000) {
-      System.out.println("Isento");
-    }
+        double renda = leitor.nextDouble();
+        double imposto = 0;
     
-    else if((renda > 2000) && (renda <= 3000)) {
-      renda -= 2000;
-      imposto += (renda * 0.08);
-      System.out.println("R$ " + String.format("%.2f",imposto));
+        if(renda <= 2000) {
+        System.out.println("Isento");
+        }
+        
+        else if((renda > 2000) && (renda <= 3000)) {
+        renda -= 2000;
+        imposto += (renda * 0.08);
+        System.out.println("R$ " + String.format("%.2f",imposto));
+        }
+        
+        else if((renda > 3000) && (renda <= 4500)) {
+        renda -= 3000;
+        imposto += (renda * 0.18) + (1000 * 0.08);
+        System.out.println("R$ " + String.format("%.2f",imposto));
+        }
+        
+        else if(renda > 4500) {
+        renda -= 4500;
+        imposto += (renda * 0.28) + (1500 * 0.18) + (1000 * 0.08);
+        System.out.println("R$ " + String.format("%.2f",imposto));
+        }
     }
-    
-    else if((renda > 3000) && (renda <= 4500)) {
-      renda -= 3000;
-      imposto += (renda * 0.18) + (1000 * 0.08);
-      System.out.println("R$ " + String.format("%.2f",imposto));
-    }
-    
-    else if(renda > 4500) {
-      renda -= 4500;
-      imposto += (renda * 0.28) + (1500 * 0.18) + (1000 * 0.08);
-      System.out.println("R$ " + String.format("%.2f",imposto));
-    }
-    
+
+    public static void blankSpacesAndVowels() {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        String[] strSplit = str.split(" ");
+        int espacosEmBranco = strSplit.length - 1, quantVogais = 0;
+        
+        for (String item : strSplit) {
+        item = item.toLowerCase();
+        String[] auxArray = item.split("");
+        
+        for(String letter: auxArray) {
+            if(
+            (letter.equals("a")) || (letter.equals("e")) || (letter.equals("i")) ||
+            (letter.equals("o")) || (letter.equals("u"))
+            ) {
+            quantVogais += 1;
+            }
+        }
+            
+        }
+        System.out.println("Espacos em branco: " + espacosEmBranco + " Vogais: " + quantVogais);
     }
 }
